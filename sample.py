@@ -12,6 +12,7 @@
 
 
 import pandas as pd
+import matplotlib.pyplot as plt
 import xgboost as xbg
 from sklearn.linear_model import LogisticRegression
 from sklearn.svm import SVC
@@ -31,4 +32,9 @@ homeWinRate=float(homewins/matches *100)
 # print('Number of features : {}'.format(features))
 # print('Number of home wins: {}'.format(homewins))
 # print('The home win rate : {:.2f}%'.format(homeWinRate))
+
+#visualizing data
+from pandas.plotting import scatter_matrix
+scatter_matrix(data[['HTHG','HTAG','HC','AC','FTR','HTR']], figsize=(10,10))
+print(plt.show())
 
